@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attacker.example</title>
+    <script>
+        function load() {
+            const userInfo = frm.document.querySelector('#user_info');
+            console.log(userInfo.textContent);
+        }
+    </script>
+</head>
+<body>
+    <div>これは罠サイトです</div>
+    <iframe name="frm" src="http://site.example:3000/user.html" onload="load()" width="80%"></iframe>
+</body>
+</html>
