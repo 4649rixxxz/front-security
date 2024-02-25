@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>XSS検証用ページ</title>
+</head>
+<body>
+    <h1>XSS検証用ページ</h1>
+    <div id="result"></div>
+    <a id="link" href="#">リンクをクリック</a>
+
+    <script>
+        const url = new URL(location.href);
+        const message = url.searchParams.get('message');
+        if (messag != null) {
+            document.querySelector('#result').textContent = message;
+        }
+    </script>
+</body>
+</html>

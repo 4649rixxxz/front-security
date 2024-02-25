@@ -14,6 +14,15 @@ router.get('/', (req, res) => {
     message: 'Hello World!'
   });
 });
+router.get('/getcookie', (req, res) => {
+  res.cookie('test', 'abcde', {
+    maxAge: 60 * 60 * 24,
+    httpOnly: false
+  });
+  res.send({
+    message: 'Cookie set'
+  });
+});
 
 router.use(express.json());
 router.post('/', (req, res) => {
@@ -21,5 +30,6 @@ router.post('/', (req, res) => {
   console.log(body);
   res.end();
 });
+
 
 module.exports = router;
